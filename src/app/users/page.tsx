@@ -2,13 +2,18 @@ import React from "react";
 import Usertable from "./Usertable";
 
 
-const UsersPage = () => {
-  
+const UsersPage = ({searchParams}:{
+  searchParams:{
+    sortOrder:string
+  }
+}) => {
+
+  const sort = searchParams.sortOrder;
+
   return (
     <>
       <h1>Users</h1>
-      <p>{new Date().toLocaleTimeString()}</p>
-      <Usertable />
+      <Usertable sorts={sort} />
     </>
   );
 };
